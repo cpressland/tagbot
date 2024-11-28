@@ -11,15 +11,14 @@ def tagbot(username: str, password: str, source: str, new_tags: str) -> None:
     """Tag a container image in a registry.
 
     Args:
-    ----
         username (str): Username for Container Registry
         password (str): Password for Container Registry
         source (str): Source Container Image and Tag
         new_tags (str): New Container Image Tags, comma seperated
 
     Returns:
-    -------
         None
+
     """
     registry, image, tag = re.split("[:/]", source)
 

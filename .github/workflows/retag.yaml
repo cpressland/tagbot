@@ -31,6 +31,6 @@ jobs:
     steps:
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.13"
       - run: pip install container-tagbot
       - run: tagbot --username="${{ inputs.username }}" --password="${{ secrets.password }}" --source="${{ inputs.source }}" --tags="${{ inputs.tags }}"
