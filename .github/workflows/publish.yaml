@@ -9,14 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-      - run: |
-          pip install poetry
-          poetry self add "poetry-dynamic-versioning[plugin]"
-          poetry config pypi-token.pypi ${{ secrets.POETRY_PYPI_TOKEN }}
-          poetry build
-          poetry publish
+      - uses: astral-sh/setup-uv@v6
+      - run: uv version ${{ github.ref_name }}
+      - run: uv build
+      - run: uv publish --trusted-publishing always
