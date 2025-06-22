@@ -27,8 +27,7 @@ def tagbot(username: str, password: str, source: str, new_tags: str) -> None:
             f"https://{registry}/v2/{image}/manifests/{tag}",
             headers={
                 "Accept": (
-                    "application/vnd.docker.distribution.manifest.v2+json, "
-                    "application/vnd.oci.image.manifest.v1+json"
+                    "application/vnd.docker.distribution.manifest.v2+json, application/vnd.oci.image.manifest.v1+json"
                 ),
             },
             auth=(username, password),
